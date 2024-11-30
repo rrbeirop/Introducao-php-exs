@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />');
+
+
+:root {
+    --cor--sucesso: greenyellow;
+    --cor--erro: red;
+    /* --cor--branco: white;
+    --cor--azul: blue;
+    --cor--turquesa:teal;
+    --cor--cinza: lightslategray; */
+
+}   
+body{
+    font-family: sans-serif;
+    font-size: 14px;  
+    background-color:ivory;
+    border: 0;
+
+}
+
+.conteiner {
+    background-color: white;
+    width: 70%;
+    margin:0 auto;  
+    border:0;
+
+
+}
+
+.conteiner table{
+    
+    width: 100%;
+    border-color:black;
+    border-collapse: collapse;
+
+    thead, th, body td, tr {
+        border-color:  inherit;
+        border-style: solid;
+        border: 0;
+    }
+    th, td {
+        border-bottom-width: 0px;
+        padding: 0.5rem;
+        text-align: left;
+
+    }
+
+    /* tbody tr:nth-child(even){
+        background-color: var(--cor--turquesa)
+
+    }
+     */
+    tbody tr:houver{
+        background-color:var(--cor--cinza)
+
+    }
+}   
+
+.notificacao{
+    position: fixed;    
+    top: 20px;
+    right: 20px;
+    color: var(--cor--branco);
+    padding: 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px( 0, 0 , 0 , 1);
+    z-index: 10;
+    
+    &.sucesso {
+        background-color: var(--cor--sucesso)
+    }
+
+    &.erro{
+        background-color:var(--cor--erro)
+    }
+}
+
+
+
+.editar {
+    padding: 15px;
+    margin: auto;
+}
