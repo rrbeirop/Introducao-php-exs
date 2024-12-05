@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === "GET") {
    $nome = $_GET ["nome"];
    $ano = $_GET ["ano"];
    $descricao = $_GET ["descricao"];
+   $url_img = $_GET["imagem"];
         
     // $descricao = $_GET["descricao"];
     // $ano = $_g["ano"]
@@ -20,12 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST ["nome"];
     $ano = $_POST ["ano"];
     $descricao = $_POST ["descricao"];
+    $url_img = $_POST ["imagem"];
 
 
 require_once __DIR__ ."/../../model/Filme.php";
   
 $filmeModel = new Filme();
-$filmeModel->editar($id, $nome, $ano, $descricao);
+$filmeModel->editar($id, $nome, $ano, $descricao, $url_img);
     
 } 
 
@@ -41,14 +43,15 @@ $filmeModel->editar($id, $nome, $ano, $descricao);
    
 </head>
 <body>
-    <form action="editar.php" method="POST">
-    <input class="editar" type="text" name="id" value = "<?= $id;?>">
-    <input class="editar"type="text" name="nome" value = "<?= $nome;?>"> 
-    <input class="editar"type="text" name="ano"value = "<?= $ano;?>">
+    <form class="formulario" action="editar.php" method="POST">
+        <input class="editar" type="hidden" name="id" value = "<?= $id;?>">
+        <input class="editar"type="text" name="nome" value = "<?= $nome;?>"> 
+        <input class="editar"type="text" name="ano"value = "<?= $ano;?>">
+        <input class="editar"type="text" name="imagem"value = "<?= $url_img;?>">
 
-    <textarea name="descricao" id="" cols="30" rows="10"><?=$descricao?></textarea>
-    
-    <button> Salvar</button>
+        <textarea name="descricao" id="" cols="30" rows="10"><?=$descricao?></textarea>
+        
+        <button> Salvar</button>
     </form>
 </body>
 </html>

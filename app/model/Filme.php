@@ -78,13 +78,14 @@ Class Filme {
     }
 
     #metado editar 
-    public function editar($id,$nome, $ano, $descricao){
-        $query = "UPDATE $this->tabela set nome_filme = :nome , ano = :ano , descricao = :descricao where id = :id ";
+    public function editar($id,$nome, $ano, $descricao, $url_img){
+        $query = "UPDATE $this->tabela set nome_filme = :nome , ano = :ano , descricao = :descricao, url_img = :url_img where id = :id ";
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(":id", $id);
         $stmt->bindParam(":nome", $nome) ;
         $stmt->bindParam(":descricao", $descricao ) ;
         $stmt->bindParam(":ano", $ano) ;
+        $stmt->bindParam(":url_img", $url_img) ;
         $stmt->execute();
         
         if($stmt) {

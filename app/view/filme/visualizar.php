@@ -34,7 +34,7 @@ $filme = $filmeModel->buscarTodosPorId($id);
     <h3>Nome:<?php echo $filme->nome_filme?></h3>
     <p>Descrição:<?php echo $filme->descricao?></p>
     <p>Ano:<?php echo $filme->ano?></p>
- 
+    <img src="<?php echo $filme->url_img?>" alt="">
 </span>
 
     <!-- voltar para listar --> 

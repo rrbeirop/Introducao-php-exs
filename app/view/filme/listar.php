@@ -93,6 +93,7 @@ $filmes = $filmeModel->buscarTodos();
                 <input type="hidden" name="nome" value="<?php echo $filme->nome_filme;?>" >
                 <input type="hidden" name="ano" value="<?php echo $filme->ano;?>" >
                 <input type="hidden" name="descricao" value="<?php echo $filme->descricao;?>" >
+                <input type="hidden" name="imagem" value="<?php echo $filme->url_img;?>" >
                 
                 <button><i class="fa-solid fa-pen-to-square"></i> </button>
                 </form>

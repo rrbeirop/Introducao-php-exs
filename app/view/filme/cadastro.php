@@ -21,21 +21,29 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/style2.css"/>
     <title>cadrastro</title>
 </head>
 <body>
     <!-- Formulário que envia os dados para o arquivo processar.php -->
-    <form action="cadastro.php" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome_filme" required><br><br>
+    <form class="formulario" action="cadastro.php" method="POST">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome_filme" required>
 
-        <label for="descricao">Descrição:</label><br>
-        <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea><br><br>
+        </div>
+        
+        <div>
 
+            <label for="descricao">Descrição:</label><br>
+            <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea>
+        </div>
 
-        <label for="ano">Ano:</label>
-        <input type="number" id="ano" name="ano" required><br><br>
+        <div> 
 
+            <label for="ano">Ano:</label>
+            <input type="number" id="ano" name="ano" required>
+        </div>  
         <button type="submit">Cadrastrar</button>
     </form>
 </body>
