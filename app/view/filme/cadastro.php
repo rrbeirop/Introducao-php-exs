@@ -7,10 +7,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $nome   = $_POST["nome_filme"];
     $descricao = $_POST ["descricao"];
     $ano = $_POST ["ano"];
+    $url_img = $_POST["url_img"];
 
     
     $filmeModel = new Filme();
-    $filmeModel->cadrastro($nome, $descricao, $ano);
+    $filmeModel->cadrastro($nome, $descricao, $ano , $url_img);
 }
 
 ?>
@@ -25,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     <title>cadrastro</title>
 </head>
 <body>
+    <button></button>
     <!-- Formulário que envia os dados para o arquivo processar.php -->
     <form class="formulario" action="cadastro.php" method="POST">
         <div>
@@ -36,15 +38,23 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         <div>
 
             <label for="descricao">Descrição:</label><br>
-            <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea>
+            <textarea id="descricao" name="descricao" rows="4" cols="50" ></textarea>
         </div>
 
         <div> 
 
             <label for="ano">Ano:</label>
-            <input type="number" id="ano" name="ano" required>
-        </div>  
-        <button type="submit">Cadrastrar</button>
+            <input type="number" id="ano" name="ano" >
+        </div>
+        
+        <div> 
+
+            <label for="url_img">Link da imagem:</label>
+            <input type="text" name="url_img">
+        </div>
+
+        <button type="submit">CADASTRAR</button>
+        <a class="voltar" href="listar.php">VOLTAR</a>
     </form>
 </body>
 </html>

@@ -62,12 +62,13 @@ Class Filme {
 
     #metado cadrastosss
 
-    public function  cadrastro($nome, $descricao, $ano){
-        $query = "INSERT INTO $this->tabela (nome_filme, descricao, ano) values (:nome, :descricao, :ano)";
+    public function  cadrastro($nome, $descricao, $ano, $url_img ){
+        $query = "INSERT INTO $this->tabela (nome_filme, descricao, ano, url_img) values (:nome, :descricao, :ano, :url_img)";
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(":nome", $nome ,PDO::PARAM_STR) ;
         $stmt->bindParam(":descricao", $descricao ,PDO::PARAM_STR ) ;
         $stmt->bindParam(":ano", $ano , PDO::PARAM_INT) ;
+        $stmt->bindParam(":url_img", $url_img , PDO::PARAM_STR) ;
         $stmt->execute();
 
         if($stmt) {

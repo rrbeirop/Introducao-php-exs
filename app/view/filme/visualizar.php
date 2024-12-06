@@ -24,23 +24,22 @@ $filme = $filmeModel->buscarTodosPorId($id);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filmes</title>
-    <link rel="stylesheet" href="catalogo-filmes\public\css\style.css">
+    <link rel="stylesheet" href="../../public/css/style2.css"/>
 
 </head>
 <body>
-    <section class="conteiner">
-    <h2>Detalhes do Filme</h2>
+    <!-- <section class="conteiner"> -->
+    <div class="formulario" id = "visualizar">
+        <h1>Detalhes do Filme</h1> 
+        
+        <p>Nome <?php echo $filme->nome_filme?></p>
+        <p>Descrição <?php echo $filme->descricao?></p>
+        <p>Ano<?php echo $filme->ano?></p>
+        <img src="<?php echo $filme->url_img?>" alt="">
 
-    <h3>Nome:<?php echo $filme->nome_filme?></h3>
-    <p>Descrição:<?php echo $filme->descricao?></p>
-    <p>Ano:<?php echo $filme->ano?></p>
-    <img src="<?php echo $filme->url_img?>" alt="">
-</span>
-
-    <!-- voltar para listar --> 
-    <a href="listar.php">
-        <button><i class="fa-solid fa-rotate-left"></i> </button>
-
-    </section>
+        <a href="listar.php">
+        <button><i class="fa-solid fa-rotate-left"></i>VOLTAR </button>
+    </div>
+   
 </body>
 </html>
