@@ -3,7 +3,7 @@
 require_once __DIR__. "\..\..\model\Filme.php";
 
 
-if ($_SERVER['REQUEST_METHOD'] === "POST") {
+if ($_SERVER['REQUEST_METHOD'] === "POSTf") {
     $nome   = $_POST["nome_filme"];
     $descricao = $_POST ["descricao"];
     $ano = $_POST ["ano"];
